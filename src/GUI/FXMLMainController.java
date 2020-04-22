@@ -1,13 +1,15 @@
-package Domain;
+package GUI;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
+import javax.swing.*;
+import java.io.IOException;
 
 
-public class MainController {
+public class FXMLMainController {
     @FXML
     private ImageView image1;
 
@@ -31,6 +33,7 @@ public class MainController {
 
     @FXML
     private Label balanceLabel;
+
 
     @FXML
     void showBalance(MouseEvent event) {

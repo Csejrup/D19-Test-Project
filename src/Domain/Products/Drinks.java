@@ -7,6 +7,6 @@ public class Drinks extends Product
     }
 
     private String _FOODTYPE;
-
+//////
 
 }
