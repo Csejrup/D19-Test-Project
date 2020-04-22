@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class Main extends Application {
+public class MainGUI extends Application {
 
 
     public static void main(String[] args) {
@@ -16,9 +16,10 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
             primaryStage.setTitle("ECCO Canteen");
-            primaryStage.setScene(new Scene(root, 300, 275));
+            primaryStage.setScene(new Scene(root, 1200 , 800));
+            primaryStage.setResizable(false);
             primaryStage.show();
 
         } catch (Exception e) {

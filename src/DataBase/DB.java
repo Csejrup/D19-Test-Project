@@ -13,7 +13,7 @@ import java.util.Properties;
 
 /**
  *
- * @author tha
+ *
  */
 public class DB {
     private static Connection con;

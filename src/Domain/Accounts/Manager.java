@@ -9,7 +9,17 @@ import java.sql.Statement;
 public class Manager extends Account
 {
     private String _NAME;
+    private String _SURNAME;
     private String _EMAIL;
+    public String get_SURNAME() {
+        return _SURNAME;
+    }
+
+    public void set_SURNAME(String _SURNAME) {
+        this._SURNAME = _SURNAME;
+    }
+
+
 
     public void setBorder(int border, int productID){
         DB.insertSQL("INSERT INTO tblStorage(fldMinQuantity) WHERE fldProductID = '"+productID+"' VALUES('"+border+"')");
