@@ -56,8 +56,7 @@ public class FXMLMainController {
     }
 
     @FXML
-    void showStatistics(MouseEvent event) {
-        System.out.println("HEJ");
+    void showStatistics(MouseEvent event) { System.out.println("HEJ");
     }
 
 }
