@@ -62,6 +62,7 @@ public class FXMLMainController extends AbstractController implements Initializa
 
     @FXML
     void showStatistics(MouseEvent event) { System.out.println("HEJ");
+
         Stage stage = (Stage) statisticLabel.getScene().getWindow();
         loadscreen(stage, "Statistics.fxml");
     }
