@@ -1,7 +1,5 @@
 package GUI;
 
-import javafx.geometry.Insets;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -11,13 +9,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class LoginGUI extends MainGUI {
+public class LoginGUI extends Canteen {
 
     Stage Window;
 
     @Override
-    public void start(Stage stage) throws Exception {
-        Window = stage;
+    public void start(Stage LoginStage) throws Exception {
+        Window = LoginStage;
         GridPane grid = new GridPane();
         BorderPane MainView = new BorderPane();
         //TEXTFIELD OBJECTS
@@ -32,6 +30,7 @@ public class LoginGUI extends MainGUI {
         ImageView LogoView = new ImageView(Logojpg);
         try {
 
+            /*
             grid.setPadding(new Insets(10, 10, 10, 10));
             grid.setVgap(8);
             grid.setHgap(10);
@@ -49,13 +48,18 @@ public class LoginGUI extends MainGUI {
             MainView.setRight(LogoView);
             grid.getChildren().addAll(Username, NameInput, PassInput, PassLabel, LoginButton);
             Scene scene = new Scene(MainView, 350, 300);
-            stage.setResizable(false);
             Window.setScene(scene);
             Window.setTitle("Log in");
             Window.show();
+
+
+             */
+
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+
 
     }
 }
