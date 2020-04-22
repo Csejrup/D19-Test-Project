@@ -1,8 +1,9 @@
-package GUI;
+package GUI.Controller;
 
 import DataBase.DB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
@@ -10,12 +11,14 @@ import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.ResourceBundle;
 
-public class FXMLStatisticsController {
+public class FXMLStatisticsController extends AbstractController implements Initializable {
 
     @FXML
     BorderPane StatisticView;
@@ -28,6 +31,12 @@ public class FXMLStatisticsController {
     @FXML
     private PieChart pieChart;
     Connection con;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
+
     public  class ModelTable {
         String ProductList;
         int QuantityList;

@@ -20,12 +20,12 @@ public class Canteen extends Application implements Initializable {
     public void start(Stage primaryStage) throws Exception {
 
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("Statistics.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("layouts/LoginGUI.fxml"));
             primaryStage.setTitle("Login");
             primaryStage.setScene(new Scene(root, 800 , 500));
             primaryStage.setResizable(false);
             primaryStage.show();
-////////////
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,4 +35,5 @@ public class Canteen extends Application implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
     }
+
 }

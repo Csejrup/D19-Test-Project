@@ -1,8 +1,9 @@
-package GUI;
+package GUI.Controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,8 +11,10 @@ import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class FXMLLoginController
+public class FXMLLoginController extends AbstractController implements Initializable
 {
     @FXML
     private Label info1;
@@ -30,18 +33,21 @@ public class FXMLLoginController
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
-        if(passwordTextfield.getText().equals("1234"))
+        //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
+        if(passwordTextfield.getText().equals(""))
         {
-            Stage mainStage = new Stage();
-            Parent root = FXMLLoader.load(getClass().getResource("MainGUI.fxml"));
-            mainStage.setTitle("ECCO CANTEEN");
-            mainStage.setScene(new Scene(root, 1200,800));
-            mainStage.setResizable(false);
-            mainStage.show();
+
+          Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+            loadscreen(mainWindow, "MainGUI.fxml");
         }
         else
         {
             info1.setText("Password is incorrect. Please Try Again");
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
     }
 }

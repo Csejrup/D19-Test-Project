@@ -1,15 +1,19 @@
-package GUI;
+package GUI.Controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class FXMLMainController {
+public class FXMLMainController extends AbstractController implements Initializable {
     @FXML
     private ImageView image1;
 
@@ -37,7 +41,8 @@ public class FXMLMainController {
 
     @FXML
     void showBalance(MouseEvent event) {
-        System.out.println("HEJ");
+        Stage stage = (Stage) balanceLabel.getScene().getWindow();
+        loadscreen(stage, "LoginGUI.fxml");
     }
 
     @FXML
@@ -57,6 +62,12 @@ public class FXMLMainController {
 
     @FXML
     void showStatistics(MouseEvent event) { System.out.println("HEJ");
+        Stage stage = (Stage) statisticLabel.getScene().getWindow();
+        loadscreen(stage, "Statistics.fxml");
     }
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
