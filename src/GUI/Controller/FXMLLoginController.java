@@ -56,7 +56,7 @@ public class FXMLLoginController extends AbstractController implements Initializ
             info1.setText("Password is incorrect. Please Try Again");
         }
     }
-
+//////////////
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
