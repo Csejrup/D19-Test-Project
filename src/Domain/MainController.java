@@ -2,9 +2,23 @@ package Domain;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
-public class Controller {
+
+
+public class MainController {
+    @FXML
+    private ImageView image1;
+
+    @FXML
+    private ImageView image2;
+
+    @FXML
+    private ImageView image3;
+
+    @FXML
+    private ImageView image4;
 
     @FXML
     private Label drinksLabel;
@@ -20,27 +34,27 @@ public class Controller {
 
     @FXML
     void showBalance(MouseEvent event) {
-
+        System.out.println("HEJ");
     }
 
     @FXML
     void showDrinks(MouseEvent event) {
-
+        System.out.println("HEJ");
     }
 
     @FXML
     void showFood(MouseEvent event) {
-
+        System.out.println("HEJ");
     }
 
     @FXML
     void showSettings(MouseEvent event) {
-
+        System.out.println("HEJ");
     }
 
     @FXML
     void showStatistics(MouseEvent event) {
-
+        System.out.println("HEJ");
     }
 
 }

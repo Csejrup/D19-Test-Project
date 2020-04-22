@@ -1,6 +1,5 @@
 package GUI;
 
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,7 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class LogIn extends Main {
+public class LoginGUI extends MainGUI {
 
     Stage Window;
 
@@ -50,6 +49,7 @@ public class LogIn extends Main {
             MainView.setRight(LogoView);
             grid.getChildren().addAll(Username, NameInput, PassInput, PassLabel, LoginButton);
             Scene scene = new Scene(MainView, 350, 300);
+            stage.setResizable(false);
             Window.setScene(scene);
             Window.setTitle("Log in");
             Window.show();
