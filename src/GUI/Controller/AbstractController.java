@@ -22,7 +22,6 @@ public abstract class AbstractController {
             primaryStage.setTitle("ECCO Canteen");
             primaryStage.setScene(scene);
             primaryStage.show();
-
         }catch(IOException e){
             e.printStackTrace();
         }

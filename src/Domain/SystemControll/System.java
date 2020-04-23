@@ -14,7 +14,6 @@ import java.util.Set;
 
 public class System {
 
-
 //Object of Product Class
     Product product = new Product();
     //use this function in the basket after someone buys stuff
@@ -27,24 +26,21 @@ public class System {
             String getStockID = DB.getData();
             int stockID = Integer.parseInt(getStockID);
             checkBorders(stockID);
-
         }
     }
-
-
     public void checkBorders(int ProductID){
       int minquantity = product.get_MINQUANTITY(ProductID);
       int quantity = product.get_QUANTITY(ProductID);
-
+      
       if(quantity<=minquantity){
+          sendEmail();
+      }else{
           sendEmail(ProductID);
       }
       else {
           checkBorders(ProductID);
       }
     }
-
-
     public void sendEmail(int ProductID){
         DB.selectSQL("SELECT fldSupplierID from tblStorage WHERE fldStockID =" + ProductID);
         String supplierID = DB.getData();
@@ -55,14 +51,8 @@ public class System {
         alert.setContentText("Email with order has been send to: "+email);
         alert.show();
     }
-
     public void checkAccount(){
-
     }
-
     public void checkProducts(){
-
     }
-
-
 }
