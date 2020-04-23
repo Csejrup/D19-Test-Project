@@ -9,9 +9,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLMainController">
+<AnchorPane prefHeight="687.0" prefWidth="1002.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLMainController">
    <children>
-      <AnchorPane prefHeight="800.0" prefWidth="287.0" style="-fx-background-color: #8bc34a;">
+      <AnchorPane prefHeight="687.0" prefWidth="277.0" style="-fx-background-color: #8bc34a;">
          <children>
             <Label contentDisplay="CENTER" layoutX="19.0" prefHeight="85.0" prefWidth="247.0" text="ECCO Canteen">
                <font>
@@ -26,22 +26,22 @@
                   </RadialGradient>
                </textFill>
             </Label>
-            <Label fx:id="drinksLabel" layoutX="142.0" layoutY="228.0" onMousePressed="#showDrinks" text="Drinks" textFill="WHITE">
+            <Label fx:id="drinksLabel" layoutX="151.0" layoutY="220.0" onMousePressed="#showDrinks" text="Drinks" textFill="WHITE">
                <font>
                   <Font name="Dubai Medium" size="30.0" />
                </font>
             </Label>
-            <Label fx:id="statisticLabel" layoutX="121.0" layoutY="716.0" onMousePressed="#showStatistics" text="Statistics" textFill="WHITE">
+            <Label fx:id="statisticLabel" layoutX="129.0" layoutY="580.0" onMousePressed="#showStatistics" text="Statistics" textFill="WHITE">
                <font>
                   <Font name="Dubai Medium" size="32.0" />
                </font>
             </Label>
-            <Label fx:id="foodLabel" layoutX="142.0" layoutY="126.0" onMousePressed="#showFood" prefHeight="54.0" prefWidth="71.0" text="Food" textFill="WHITE">
+            <Label fx:id="foodLabel" layoutX="156.0" layoutY="126.0" onMousePressed="#showFood" prefHeight="54.0" prefWidth="71.0" text="Food" textFill="WHITE">
                <font>
                   <Font name="Dubai Medium" size="30.0" />
                </font>
             </Label>
-            <ImageView fx:id="image1" fitHeight="71.0" fitWidth="82.0" layoutX="25.0" layoutY="117.0" onMousePressed="#showFood" opacity="0.76" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image1" fitHeight="71.0" fitWidth="82.0" layoutX="31.0" layoutY="118.0" onMousePressed="#showFood" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
@@ -49,42 +49,42 @@
                   <Image url="@../../Pictures/food_64px.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="image2" fitHeight="71.0" fitWidth="82.0" layoutX="25.0" layoutY="220.0" onMousePressed="#showDrinks" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image2" fitHeight="71.0" fitWidth="82.0" layoutX="31.0" layoutY="212.0" onMousePressed="#showDrinks" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Pictures/soda_water_64px.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="image4" fitHeight="71.0" fitWidth="82.0" layoutX="25.0" layoutY="709.0" onMousePressed="#showStatistics" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image4" fitHeight="71.0" fitWidth="82.0" layoutX="25.0" layoutY="573.0" onMousePressed="#showStatistics" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Pictures/statistics_80px.png" />
                </image>
             </ImageView>
-            <Label fx:id="balanceLabel" layoutX="113.0" layoutY="629.0" onMousePressed="#showBalance" text="Add Balance" textFill="WHITE">
+            <Label fx:id="balanceLabel" layoutX="114.0" layoutY="511.0" onMousePressed="#showBalance" text="Add Balance" textFill="WHITE">
                <font>
                   <Font name="Dubai Medium" size="30.0" />
                </font>
             </Label>
-            <ImageView fx:id="image3" fitHeight="71.0" fitWidth="82.0" layoutX="25.0" layoutY="620.0" onMousePressed="#showBalance" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image3" fitHeight="71.0" fitWidth="82.0" layoutX="25.0" layoutY="494.0" onMousePressed="#showBalance" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Pictures/payment_history_24px.png" />
                </image>
             </ImageView>
-            <Label layoutX="20.0" layoutY="530.0" text="Reception" textFill="WHITE">
+            <Label layoutX="46.0" layoutY="402.0" text="Reception" textFill="WHITE">
                <font>
                   <Font name="Dubai Medium" size="40.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="286.0" prefHeight="59.0" prefWidth="917.0" style="-fx-background-color: #8bc34a;">
+      <AnchorPane layoutX="277.0" prefHeight="59.0" prefWidth="778.0" style="-fx-background-color: #8bc34a;">
          <children>
-            <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="858.0" onMousePressed="#showSettings" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="728.0" onMousePressed="#showSettings" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../Pictures/settings_32px.png" />
                </image>
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="286.0" layoutY="59.0" prefHeight="740.0" prefWidth="917.0" style="-fx-background-color: #FFFFFF;" />
+      <AnchorPane layoutX="277.0" layoutY="59.0" prefHeight="627.0" prefWidth="787.0" style="-fx-background-color: #FFFFFF;" />
    </children>
 </AnchorPane>

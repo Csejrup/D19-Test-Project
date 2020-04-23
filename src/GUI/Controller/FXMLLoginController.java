@@ -27,9 +27,6 @@ public class FXMLLoginController extends AbstractController implements Initializ
 
     @FXML
     private Button loginBtn;
-
-
-
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
