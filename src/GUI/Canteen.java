@@ -1,5 +1,6 @@
 package GUI;
 
+import Domain.SystemControll.System;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,9 +14,7 @@ import java.util.ResourceBundle;
 public class Canteen extends Application implements Initializable {
 
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+    public static void main(String[] args) { launch(args); }
     @Override
     public void start(Stage primaryStage) throws Exception {
 

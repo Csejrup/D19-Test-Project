@@ -1,5 +1,6 @@
 package GUI.Controller;
 
+import Domain.SystemControll.System;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -31,16 +32,7 @@ public class FXMLLoginController extends AbstractController implements Initializ
     void handleLogin(ActionEvent event) throws IOException
     {
 
-        DB.selectSQL("SELECT fldStatus FROM tblEmployee WHERE fldEmployeeID = 1");
-        do {
-            String data = DB.getData();
-            if (data.equals(DB.NOMOREDATA)) {
-                break;
-            } else {
-                // WE ADD EACH ELEMENT TO THE ARRAY LIST
-                System.out.print(data);
-            }
-        } while (true);
+
         //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
         if(passwordTextfield.getText().equals(""))
         {

@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.chart.PieChart;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.layout.BorderPane;
@@ -30,29 +31,32 @@ public class FXMLStatisticsController extends AbstractController implements Init
     private TableColumn<ModelTable, String> QuantityList;
     @FXML
     private PieChart pieChart;
+    @FXML
+    ComboBox<String> comboProduct = new ComboBox<>();
     Connection con;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+    //comboProduct.getItems(productTable);
     }
 
     public  class ModelTable {
         String ProductList;
-        int QuantityList;
+
 
         public ModelTable() {
             this.ProductList = ProductList;
-            this.QuantityList = QuantityList;
+
+        }
+
+        public void setProductList(String productList) {
+            this.ProductList=productList;
         }
 
         public String getProduct(String products) {
             return ProductList;
         }
 
-        public int getQuantity(int quantity) {
-            return QuantityList;
-        }
     }
     //ProductList
     public  ArrayList<ModelTable> getAllProducts() throws ClassNotFoundException, SQLException {
@@ -61,13 +65,12 @@ public class FXMLStatisticsController extends AbstractController implements Init
         try {
 
 
-            ResultSet rs = con.createStatement().executeQuery("SELECT fldProductName, fldQuantity FROM tblStorage");
+            ResultSet rs = con.createStatement().executeQuery("SELECT fldProductName FROM tblStorage");
 
             while (rs.next()) {
                 ModelTable modelTable = new ModelTable();
 
                 modelTable.getProduct(rs.getString("Products"));
-                modelTable.getQuantity(rs.getInt("Quantity"));
 
 
                 pList.add(modelTable);
@@ -78,7 +81,7 @@ public class FXMLStatisticsController extends AbstractController implements Init
             System.out.println("error");
             e.printStackTrace();
         }
-
+        System.out.println(pList);
         return (pList);
     }
     @FXML
