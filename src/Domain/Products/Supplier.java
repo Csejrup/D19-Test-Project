@@ -1,8 +1,9 @@
 package Domain.Products;
-
-
 import DataBase.DB;
-
+/**
+ * This Class
+ *
+ */
 public class Supplier
 {
     private int _QUANTITY;

@@ -9,7 +9,10 @@ import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-
+/**
+ * This Class
+ *
+ */
 public class Canteen extends Application implements Initializable {
 
 

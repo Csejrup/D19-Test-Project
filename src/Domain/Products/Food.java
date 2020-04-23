@@ -1,5 +1,8 @@
 package Domain.Products;
-
+/**
+ * This Class
+ *
+ */
 public class Food extends Product
 {
     /////
