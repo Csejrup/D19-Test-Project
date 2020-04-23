@@ -27,9 +27,6 @@ public class FXMLLoginController extends AbstractController implements Initializ
 
     @FXML
     private Button loginBtn;
-
-
-
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
@@ -56,7 +53,7 @@ public class FXMLLoginController extends AbstractController implements Initializ
             info1.setText("Password is incorrect. Please Try Again");
         }
     }
-//////////////
+///////////////
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
