@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,7 +14,7 @@
    <children>
       <AnchorPane prefHeight="554.0" prefWidth="279.0" style="-fx-background-color: #8bc34a;">
          <children>
-            <Label contentDisplay="CENTER" layoutX="19.0" prefHeight="85.0" prefWidth="247.0" text="ECCO Canteen">
+            <Label contentDisplay="CENTER" layoutX="16.0" prefHeight="85.0" prefWidth="247.0" text="ECCO Canteen">
                <font>
                   <Font name="Dubai Medium" size="40.0" />
                </font>
@@ -26,51 +27,51 @@
                   </RadialGradient>
                </textFill>
             </Label>
-            <Label fx:id="statisticLabel" layoutX="120.0" layoutY="491.0" onMousePressed="#showStatistics" text="Statistics" textFill="WHITE">
-               <font>
-                  <Font name="Dubai Medium" size="32.0" />
-               </font>
-            </Label>
-            <Label fx:id="productsLabel" layoutX="120.0" layoutY="127.0" onMousePressed="#showProducts" prefHeight="54.0" prefWidth="125.0" text="Products" textFill="WHITE">
-               <font>
-                  <Font name="Dubai Medium" size="30.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="image1" fitHeight="71.0" fitWidth="82.0" layoutX="11.0" layoutY="118.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image1" fitHeight="46.0" fitWidth="52.0" layoutX="26.0" layoutY="131.0" opacity="0.76" pickOnBounds="true" preserveRatio="true">
                <cursor>
                   <Cursor fx:constant="DEFAULT" />
                </cursor>
                <image>
-                  <Image url="@../../Pictures/add_shopping_cart_80px.png" />
+                  <Image url="@Pictures/add_shopping_cart_80px.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="image4" fitHeight="71.0" fitWidth="82.0" layoutX="11.0" layoutY="477.0" onMousePressed="#showStatistics" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image4" fitHeight="46.0" fitWidth="46.0" layoutX="26.0" layoutY="486.0" onMousePressed="#showStatistics" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Pictures/statistics_80px.png" />
+                  <Image url="@Pictures/statistics_80px.png" />
                </image>
             </ImageView>
-            <Label fx:id="balanceLabel" layoutX="114.0" layoutY="394.0" onMousePressed="#showBalance" text="Add Balance" textFill="WHITE">
-               <font>
-                  <Font name="Dubai Medium" size="30.0" />
-               </font>
-            </Label>
-            <ImageView fx:id="image3" fitHeight="71.0" fitWidth="82.0" layoutX="11.0" layoutY="386.0" onMousePressed="#showBalance" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image3" fitHeight="46.0" fitWidth="46.0" layoutX="26.0" layoutY="395.0" onMousePressed="#showBalance" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Pictures/payment_history_24px.png" />
+                  <Image url="@Pictures/payment_history_24px.png" />
                </image>
             </ImageView>
-            <Label layoutX="47.0" layoutY="298.0" text="Reception" textFill="WHITE">
+            <Label layoutX="16.0" layoutY="293.0" text="Reception" textFill="#f8fffc" underline="true">
                <font>
                   <Font name="Dubai Medium" size="40.0" />
                </font>
             </Label>
+            <Button fx:id="btnProducts" layoutX="93.0" layoutY="123.0" mnemonicParsing="false" onAction="#showProducts" prefHeight="59.0" prefWidth="141.0" style="-fx-background-color: #7cb342;" text="Products" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Medium" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnBalance" layoutX="93.0" layoutY="387.0" mnemonicParsing="false" onAction="#showBalance" prefHeight="59.0" prefWidth="141.0" style="-fx-background-color: #7cb342;" text="Balance" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Medium" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnStatistic" layoutX="93.0" layoutY="478.0" mnemonicParsing="false" onAction="#showStatistics" prefHeight="59.0" prefWidth="141.0" style="-fx-background-color: #7cb342;" text="Statistics" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Medium" size="25.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="277.0" prefHeight="59.0" prefWidth="558.0" style="-fx-background-color: #8bc34a;">
          <children>
             <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="500.0" onMousePressed="#showSettings" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Pictures/settings_32px.png" />
+                  <Image url="@Pictures/settings_32px.png" />
                </image>
             </ImageView>
          </children>

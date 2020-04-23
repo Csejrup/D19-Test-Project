@@ -1,7 +1,10 @@
 package Domain.SystemControll;
 import Domain.Products.*;
 import javafx.scene.control.Alert;
-
+/**
+ * This Class
+ *
+ */
 public class System {
 //Object of Product Class
     Product product = new Product();

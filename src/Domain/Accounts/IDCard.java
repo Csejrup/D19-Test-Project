@@ -1,7 +1,10 @@
 package Domain.Accounts;
 
 import DataBase.DB;
-
+/**
+ * This Class
+ *
+ */
 public class IDCard
 {
     private int _IDCARD;
