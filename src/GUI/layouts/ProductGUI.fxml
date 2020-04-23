@@ -9,7 +9,7 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="554.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLProductController">
+<AnchorPane prefHeight="554.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLProductController">
     <children>
         <AnchorPane prefHeight="554.0" prefWidth="279.0" style="-fx-background-color: #8bc34a;">
             <children>
@@ -59,36 +59,43 @@
         </AnchorPane>
         <AnchorPane layoutX="277.0" layoutY="59.0" prefHeight="495.0" prefWidth="558.0" style="-fx-background-color: #FFFFFF;">
          <children>
-             <ImageView fx:id="coffee1" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="30.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+             <ImageView fx:id="coffee1" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="30.0" onMouseClicked="#CoffeeEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
                  <image>
                      <Image url="@Pictures/coffe.png" />
                  </image>
              </ImageView>
-             <ImageView fx:id="coke1" fitHeight="105.0" fitWidth="141.0" layoutX="213.0" layoutY="30.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+             <ImageView fx:id="coke1" fitHeight="105.0" fitWidth="141.0" layoutX="213.0" layoutY="30.0" onMouseClicked="#ColaEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
                  <image>
                      <Image url="@Pictures/coke.png" />
                  </image>
              </ImageView>
-             <ImageView fx:id="water1" fitHeight="105.0" fitWidth="146.0" layoutX="408.0" layoutY="30.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+             <ImageView fx:id="water1" fitHeight="105.0" fitWidth="146.0" layoutX="408.0" layoutY="30.0" onMouseClicked="#WatterEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
                  <image>
                      <Image url="@Pictures/water.png" />
                  </image>
              </ImageView>
-            <ImageView fx:id="burger" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="205.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="burger" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="205.0" onMouseClicked="#FoodEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/food.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="apple" fitHeight="105.0" fitWidth="155.0" layoutX="213.0" layoutY="205.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="apple" fitHeight="105.0" fitWidth="155.0" layoutX="213.0" layoutY="205.0" onMouseClicked="#FruitEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/fruit.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="milk" fitHeight="105.0" fitWidth="155.0" layoutX="408.0" layoutY="205.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="milk" fitHeight="105.0" fitWidth="155.0" layoutX="408.0" layoutY="205.0" onMouseClicked="#MilkEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/milk.png" />
                </image>
             </ImageView>
+            <Label layoutX="53.0" layoutY="170.0" />
+            <Label fx:id="colaQTY" layoutX="252.0" layoutY="170.0" />
+            <Label fx:id="coffeeQTY" layoutX="53.0" layoutY="170.0" />
+            <Label fx:id="foodQTY" layoutX="53.0" layoutY="339.0" />
+            <Label fx:id="fruitsQTY" layoutX="252.0" layoutY="339.0" />
+            <Label fx:id="waterQTY" layoutX="447.0" layoutY="170.0" />
+            <Label fx:id="milkQTY" layoutX="447.0" layoutY="331.0" />
          </children></AnchorPane>
     </children>
 </AnchorPane>
