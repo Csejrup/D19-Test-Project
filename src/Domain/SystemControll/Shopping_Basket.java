@@ -21,7 +21,7 @@ public class Shopping_Basket
 
     public void addProductItem(int productID){
         _PRODUCTID = productID;
-        DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldStockID = '"+productID+"'");
         int price = Integer.parseInt(DB.getDisplayData());
         _TOTAL = _TOTAL+price;
     }
@@ -29,11 +29,11 @@ public class Shopping_Basket
         /*
         //////////////////////TEST///////////////////
          */
-        DB.selectSQL("SELECT fldQuantity FROM tblStorage WHERE fldProductID ='"+_PRODUCTID+"'");
+        DB.selectSQL("SELECT fldQuantity FROM tblStorage WHERE fldStockID ='"+_PRODUCTID+"'");
         _QUANTITY = Integer.parseInt(DB.getDisplayData());
-        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldProductID = '"+_PRODUCTID+"' VALUES(0)");
+        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldStockID = '"+_PRODUCTID+"' VALUES(0)");
         _QUANTITY = _QUANTITY - quantity;
-        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldProductID = '"+_PRODUCTID+"' VALUES("+_QUANTITY+")");
+        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldStockID = '"+_PRODUCTID+"' VALUES("+_QUANTITY+")");
 
     }
 

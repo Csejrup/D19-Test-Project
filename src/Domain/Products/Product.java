@@ -27,7 +27,7 @@ public class Product
     ////////////////////////////
     public int get_PRODUCTID(int productID) {
         DB.selectSQL("SELECT fldproductID FROM tblStorage WHERE fldProductID = '"+productID+"'");
-        _PRODUCTID = Integer.parseInt(DB.getDisplayData());
+        _PRODUCTID = Integer.parseInt(DB.getData());
         return _PRODUCTID;
     }
 
@@ -37,29 +37,29 @@ public class Product
     }
 
     public int get_MINQUANTITY(int productID) {
-            DB.selectSQL("SELECT fldMinQuantity FROM tblStorage WHERE fldProductID = '"+productID+"'");
-            _MINQUANTITY = Integer.parseInt(DB.getDisplayData());
+            DB.selectSQL("SELECT fldMinQuantity FROM tblStorage WHERE fldStockID = '"+productID+"'");
+            _MINQUANTITY = Integer.parseInt(DB.getData());
         return _MINQUANTITY;
     }
 
     public float get_PRICE(int productID) {
-        DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldProductID = '"+productID+"'");
-        _PRICE = Integer.parseInt(DB.getDisplayData());
+        DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldStockID = '"+productID+"'");
+        _PRICE = (float) Double.parseDouble(DB.getData());
         return _PRICE;
     }
 
     public String get_PRODUCTNAME(int productID) {
-        DB.selectSQL("SELECT fldProductName FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        DB.selectSQL("SELECT fldProductName FROM tblStorage WHERE fldStockID = '"+productID+"'");
         return _PRODUCTNAME;
     }
 
     public String get_PRODUCTTYPE(int productID) {
-        DB.selectSQL("SELECT fldProductType FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        DB.selectSQL("SELECT fldProductType FROM tblStorage WHERE fldStockID = '"+productID+"'");
         return _PRODUCTTYPE;
     }
 
     public String get_EXPIRATIONDATE(int productID) {
-        DB.selectSQL("SELECT fldMinQuantity FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        DB.selectSQL("SELECT fldMinQuantity FROM tblStorage WHERE fldStockID = '"+productID+"'");
         return _EXPIRATIONDATE;
     }
     /////////////////////////////
@@ -67,7 +67,7 @@ public class Product
     ////////////////////////////
 
     public void set_PRODUCTID(int _PRODUCTID) {
-        DB.insertSQL("INSERT INTO tblStorage(fldProductID) VALUES('"+_PRODUCTID+"'");
+        DB.insertSQL("INSERT INTO tblStorage(fldStockID) VALUES('"+_PRODUCTID+"'");
         //IDK if we need this.
         this._PRODUCTID = _PRODUCTID;
     }
