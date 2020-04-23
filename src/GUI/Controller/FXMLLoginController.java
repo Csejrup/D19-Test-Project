@@ -1,5 +1,7 @@
 package GUI.Controller;
 
+import Domain.Accounts.CanteenEmploy;
+import Domain.Accounts.Manager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -18,7 +20,6 @@ import DataBase.DB;
  */
 public class FXMLLoginController extends AbstractController implements Initializable
 {
-
     /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
 
     @FXML private Label info1;
@@ -26,14 +27,12 @@ public class FXMLLoginController extends AbstractController implements Initializ
     @FXML private PasswordField passwordTextfield;
     @FXML private Button loginBtn;
     /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
-
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
         //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
         if(passwordTextfield.getText().equals(""))
         {
-
           Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
             loadscreen(mainWindow, "MainGUI.fxml");
         }

@@ -15,8 +15,7 @@ public class System {
 
       if(quantity<=minquantity){
           sendEmail();
-      }
-      else{
+      }else{
           checkBorders(ProductID);
       }
     }

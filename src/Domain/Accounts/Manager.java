@@ -17,13 +17,9 @@ public class Manager extends Account
     public String get_SURNAME() {
         return _SURNAME;
     }
-
     public void set_SURNAME(String _SURNAME) {
         this._SURNAME = _SURNAME;
     }
-
-
-
     public void setBorder(int border, int productID){
         DB.insertSQL("INSERT INTO tblStorage(fldMinQuantity) WHERE fldProductID = '"+productID+"' VALUES('"+border+"')");
     }
@@ -36,14 +32,11 @@ public class Manager extends Account
 
         if(LoginID.equals(WorkerID)&& password.equals(Password)){
             return true;
-        }
-        else{
+        } else{
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("WRONG USER NAME OR PASSWORD");
             alert.show();
             return false;
         }
-
-
     }
 }
