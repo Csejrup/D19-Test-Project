@@ -33,13 +33,17 @@ public class System {
       int quantity = product.get_QUANTITY(ProductID);
       
       if(quantity<=minquantity){
-          sendEmail();
+          //sendEmail();
+
       }else{
           sendEmail(ProductID);
       }
+      /*
       else {
           checkBorders(ProductID);
       }
+
+       */
     }
     public void sendEmail(int ProductID){
         DB.selectSQL("SELECT fldSupplierID from tblStorage WHERE fldStockID =" + ProductID);
