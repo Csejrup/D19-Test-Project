@@ -19,7 +19,7 @@ public class FXMLProductController extends AbstractController {
     private Button btnCheckOut, btnMainMenu;
     @FXML
     private Label colaQTY, coffeeQTY, waterQTY, foodQTY, fruitsQTY, milkQTY;
-
+    String showMilkQTY;
     /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
     @FXML
     void checkoutProducts(ActionEvent event) {
@@ -43,50 +43,39 @@ public class FXMLProductController extends AbstractController {
 
     }
 
+    private String get(String productName){
+        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = '"+productName +"'");
+         showMilkQTY = DB.getData();
+        //milkQTY.setText(showMilkQTY);
+        int actQTY = Integer.parseInt(showMilkQTY)-1;
+       // DB.updateSQL("UPDATE tblStorage SET fldQuantity ="+actQTY+"WHERE fldProductName='"+productName+"'");
 
+        return showMilkQTY;
+    }
 
    
 
     public void MilkEvent(MouseEvent event) {
-        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = 'Milk'");
-        String showMilkQTY = DB.getData();
+        get("Milk");
         milkQTY.setText(showMilkQTY);
-        int actQTY = Integer.parseInt(showMilkQTY)-1;
-        DB.updateSQL("UPDATE tblStorage SET fldQuantity ="+actQTY+"WHERE fldProductName='Milk'");
     }
 
-    public void FruitEvent(MouseEvent event) {
-        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = 'Fruits'");
-        String showMilkQTY = DB.getData();
-        fruitsQTY.setText(showMilkQTY);
+    public void FruitEvent(MouseEvent event) { get("Fruits");
+    fruitsQTY.setText(showMilkQTY);
     }
 
-    public void FoodEvent(MouseEvent event) {
-        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = 'Burgers'");
-        String showMilkQTY = DB.getData();
-        foodQTY.setText(showMilkQTY);
+    public void FoodEvent(MouseEvent event) { get("Burgers");
+    foodQTY.setText(showMilkQTY);
     }
 
-    public void WatterEvent(MouseEvent event) {
-        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = 'Water'");
-        String showMilkQTY = DB.getData();
-        int actQTY = Integer.parseInt(showMilkQTY)-1;
-        waterQTY.setText(showMilkQTY);
-        System.out.println(actQTY);
-        DB.updateSQL("Update tblStorage set fldQuantity =  where fldProductName = 'Water'");
-    }
+    public void WatterEvent(MouseEvent event) { get("Water");
+    waterQTY.setText(showMilkQTY);}
 
-    public void ColaEvent(MouseEvent event) {
-        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = 'Coca Cola'");
-        String showMilkQTY = DB.getData();
-        colaQTY.setText(showMilkQTY);
-    }
+    public void ColaEvent(MouseEvent event) { get("Coca Cola");
+    colaQTY.setText(showMilkQTY);}
 
-    public void CoffeeEvent(MouseEvent event) {
-        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = 'Coffee'");
-        String showMilkQTY = DB.getData();
-        coffeeQTY.setText(showMilkQTY);
-    }
+    public void CoffeeEvent(MouseEvent event) { get("Coffee");
+    coffeeQTY.setText(showMilkQTY);}
 }
 
 

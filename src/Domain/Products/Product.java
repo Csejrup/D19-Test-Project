@@ -107,4 +107,12 @@ public class Product
         //IDK if we need this.
         this._EXPIRATIONDATE = _EXPIRATIONDATE;
     }
+    private static void cleardata() {
+        do {
+            String data = DB.getData();
+            if (data.equals(DB.NOMOREDATA)) {
+                break;
+            }
+        } while (true);
+    }
 }
