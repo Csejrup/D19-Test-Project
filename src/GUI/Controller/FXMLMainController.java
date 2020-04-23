@@ -1,5 +1,6 @@
 package GUI.Controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -11,62 +12,42 @@ import javax.swing.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+/**
+ * FXML CONTROLLER CLASS
+ * FOR MainGUI.fxml
+ */
 
 
 public class FXMLMainController extends AbstractController implements Initializable {
-    @FXML
-    private ImageView image1;
+    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration, ImageView-----------------------*/
 
-    @FXML
-    private ImageView image2;
+    @FXML private ImageView image1, image2, image3, image4;
+    @FXML private Button btnProducts, btnBalance, btnStatistic;
 
+    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration, ImageView-----------------------*/
     @FXML
-    private ImageView image3;
-
-    @FXML
-    private ImageView image4;
-
-    @FXML
-    private Label drinksLabel;
-
-    @FXML
-    private Label statisticLabel;
-
-    @FXML
-    private Label foodLabel;
-
-    @FXML
-    private Label balanceLabel;
-
-
-    @FXML
-    void showBalance(MouseEvent event) {
-        Stage stage = (Stage) balanceLabel.getScene().getWindow();
-        loadscreen(stage, "LoginGUI.fxml");
+    void showBalance(ActionEvent event) {
+        Stage stage = (Stage) btnBalance.getScene().getWindow();
+        loadscreen(stage, "BalanceGUI.fxml");
     }
 
     @FXML
-    void showDrinks(MouseEvent event) {
+    void showProducts(ActionEvent event) {
         System.out.println("HEJ");
+        Stage stage = (Stage) btnProducts.getScene().getWindow();
+        loadscreen(stage, "ProductGUI.fxml");
     }
 
     @FXML
-    void showFood(MouseEvent event) {
-        System.out.println("HEJ");
+    void showStatistics(ActionEvent event) {
+        Stage stage = (Stage) btnStatistic.getScene().getWindow();
+        loadscreen(stage, "Statistics.fxml");
     }
 
     @FXML
     void showSettings(MouseEvent event) {
         System.out.println("HEJ");
     }
-
-    @FXML
-    void showStatistics(MouseEvent event) { System.out.println("HEJ");
-
-        Stage stage = (Stage) statisticLabel.getScene().getWindow();
-        loadscreen(stage, "Statistics.fxml");
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 

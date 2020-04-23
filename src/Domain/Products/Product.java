@@ -5,7 +5,10 @@ import DataBase.DB;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+/**
+ * This Class
+ *
+ */
 public class Product
 {
     private int _PRODUCTID;

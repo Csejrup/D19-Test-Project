@@ -1,5 +1,8 @@
 package Domain.Products;
-
+/**
+ * This Class
+ *
+ */
 public class Drinks extends Product
 {
     public String get_FOODTYPE() {

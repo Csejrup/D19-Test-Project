@@ -1,7 +1,10 @@
 package Domain.Accounts;
 
 import DataBase.DB;
-
+/**
+ * This Class
+ *
+ */
 public class Account {
     private String _USERNAME;
     private String _PASSWORD;

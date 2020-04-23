@@ -7,7 +7,10 @@ import java.security.AllPermission;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * This Class
+ *
+ */
 public class Shopping_Basket
 {
     private int _CARTID;

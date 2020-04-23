@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="554.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLProductController">
+    <children>
+        <AnchorPane prefHeight="554.0" prefWidth="279.0" style="-fx-background-color: #8bc34a;">
+            <children>
+                <Label contentDisplay="CENTER" layoutX="19.0" prefHeight="85.0" prefWidth="247.0" text="ECCO Canteen">
+                    <font>
+                        <Font name="Dubai Medium" size="40.0" />
+                    </font>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#c0ecff" />
+                                <Stop color="WHITE" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                </Label>
+                <ImageView fx:id="cart" fitHeight="39.0" fitWidth="52.0" layoutX="29.0" layoutY="115.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Pictures/checkout_26px.png" />
+                    </image>
+                </ImageView>
+                <ImageView fx:id="menu" fitHeight="59.0" fitWidth="51.0" layoutX="23.0" layoutY="475.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Pictures/menu_64px.png" />
+                    </image>
+                </ImageView>
+            <Button fx:id="btnCheckOut" layoutX="97.0" layoutY="104.0" mnemonicParsing="false" onAction="#checkoutProducts" style="-fx-background-color: #7cb342;" text="Check Out" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Medium" size="25.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnMainMenu" layoutX="93.0" layoutY="474.0" mnemonicParsing="false" onAction="#showMainMenu" style="-fx-background-color: #7cb342;" text="Main Menu" textFill="WHITE">
+               <font>
+                  <Font name="Dubai Medium" size="25.0" />
+               </font>
+            </Button>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="277.0" prefHeight="59.0" prefWidth="558.0" style="-fx-background-color: #8bc34a;">
+            <children>
+                <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="493.0" onMousePressed="#showSettings" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Pictures/settings_32px.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="277.0" layoutY="59.0" prefHeight="495.0" prefWidth="558.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+             <ImageView fx:id="coffee1" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="30.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@Pictures/coffe.png" />
+                 </image>
+             </ImageView>
+             <ImageView fx:id="coke1" fitHeight="105.0" fitWidth="141.0" layoutX="213.0" layoutY="30.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@Pictures/coke.png" />
+                 </image>
+             </ImageView>
+             <ImageView fx:id="water1" fitHeight="105.0" fitWidth="146.0" layoutX="408.0" layoutY="30.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@Pictures/water.png" />
+                 </image>
+             </ImageView>
+            <ImageView fx:id="burger" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="205.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pictures/food.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="apple" fitHeight="105.0" fitWidth="155.0" layoutX="213.0" layoutY="205.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pictures/fruit.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="milk" fitHeight="105.0" fitWidth="155.0" layoutX="408.0" layoutY="205.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Pictures/milk.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+    </children>
+</AnchorPane>

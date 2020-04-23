@@ -3,35 +3,34 @@ package GUI.Controller;
 import Domain.SystemControll.System;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import DataBase.DB;
+
+/**
+ * FXML CONTROLLER CLASS
+ * FOR LoginGUI.FXML
+ *
+ */
 public class FXMLLoginController extends AbstractController implements Initializable
 {
-    @FXML
-    private Label info1;
 
-    @FXML
-    private TextField usernameTextfield;
+    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
 
-    @FXML
-    private PasswordField passwordTextfield;
+    @FXML private Label info1;
+    @FXML private TextField usernameTextfield;
+    @FXML private PasswordField passwordTextfield;
+    @FXML private Button loginBtn;
+    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
 
-    @FXML
-    private Button loginBtn;
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
-
 
         //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
         if(passwordTextfield.getText().equals(""))

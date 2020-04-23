@@ -5,7 +5,10 @@ import DataBase.DB;
 import javafx.scene.control.Alert;
 
 import java.sql.Statement;
-
+/**
+ * This Class
+ *
+ */
 public class Manager extends Account
 {
     private String _NAME;

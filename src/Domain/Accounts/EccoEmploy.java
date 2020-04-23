@@ -2,7 +2,10 @@ package Domain.Accounts;
 
 import DataBase.DB;
 
-
+/**
+ * This Class
+ *
+ */
 public class EccoEmploy extends Account
 {
     private int _EMPLOYEEID;
