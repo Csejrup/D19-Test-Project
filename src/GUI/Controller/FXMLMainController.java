@@ -25,15 +25,12 @@ public class FXMLMainController extends AbstractController implements Initializa
 
     @FXML
     private ImageView image4;
-
     @FXML
-    private Label drinksLabel;
+    private Label productsLabel;
 
     @FXML
     private Label statisticLabel;
 
-    @FXML
-    private Label foodLabel;
 
     @FXML
     private Label balanceLabel;
@@ -46,13 +43,10 @@ public class FXMLMainController extends AbstractController implements Initializa
     }
 
     @FXML
-    void showDrinks(MouseEvent event) {
+    void showProducts(MouseEvent event) {
         System.out.println("HEJ");
-    }
-
-    @FXML
-    void showFood(MouseEvent event) {
-        System.out.println("HEJ");
+        Stage stage = (Stage) productsLabel.getScene().getWindow();
+        loadscreen(stage, "ProductGUI.fxml");
     }
 
     @FXML
