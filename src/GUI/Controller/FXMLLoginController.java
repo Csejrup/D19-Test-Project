@@ -20,21 +20,20 @@ import DataBase.DB;
 /**
  * FXML CONTROLLER CLASS
  * FOR LoginGUI.FXML
- *
+ * Handles Login Actions
  */
-public class FXMLLoginController extends AbstractController implements Initializable
+public class FXMLLoginController extends AbstractController
 {
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
 
     @FXML private Label info1;
     @FXML private TextField usernameTextfield;
     @FXML private PasswordField passwordTextfield;
     @FXML private Button loginBtn;
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
-
         //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
         if(passwordTextfield.getText().equals(""))
         {
@@ -45,10 +44,5 @@ public class FXMLLoginController extends AbstractController implements Initializ
         {
             info1.setText("Password is incorrect. Please Try Again");
         }
-    }
-///////////////
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

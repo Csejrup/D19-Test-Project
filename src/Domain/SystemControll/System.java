@@ -12,6 +12,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Set;
 
+/**
+ * This class represents the System
+ * This class checks in the background if the minimum quantity
+ * is below its mark - then sends an email out to the supplier
+ */
 public class System {
 
 //Object of Product Class
@@ -45,10 +50,6 @@ public class System {
       }
 
        */
-
-
-
-
     public void sendEmail(int ProductID){
         DB.selectSQL("SELECT fldSupplierID from tblStorage WHERE fldStockID =" + ProductID);
         String supplierID = DB.getData();

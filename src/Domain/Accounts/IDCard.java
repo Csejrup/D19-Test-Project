@@ -7,14 +7,13 @@ import java.util.ArrayList;
 
 /**
  * This Class
- *
+ *  Reoresents the ID Card for Each Employee
  */
 public class IDCard
 {
     private int _IDCARD;
     private int _NEWBALANCE;
     private float _BALANCE;
-    private ListView<Integer> balanceListView;
 
     public int get_IDCARD() { return _IDCARD; }
 
@@ -30,48 +29,32 @@ public class IDCard
      *
      */
     public void updateBalanceDB(){
-        float updatedBalance = getBalanceDB() + get_NEWBALANCE();
-        DB.updateSQL("UPDATE tblCard set fldBalance ="+updatedBalance+"WHERE fldCardID ="+get_IDCARD()+"" );
-        System.out.println(updatedBalance);
-
+        try{
+            float updatedBalance = getBalanceDB() + get_NEWBALANCE();
+            DB.updateSQL("UPDATE tblCard set fldBalance ="+updatedBalance+"WHERE fldCardID ="+get_IDCARD()+"" );
+            System.out.println(updatedBalance);
+        }catch(Exception e){
+            e.printStackTrace();
+        }
     }
-
     /**
      * getBalanceDB Method fetches the Balance from tblCard in the Database
      * @return _BALANCE
      */
     public float getBalanceDB(){
-        DB.selectSQL("SELECT fldBalance FROM tblCard WHERE fldCardID = '"+get_IDCARD()+"'");
-        _BALANCE =  Float.parseFloat(DB.getDisplayData());
-        cleardata();
+        try{
+            DB.selectSQL("SELECT fldBalance FROM tblCard WHERE fldCardID = '"+get_IDCARD()+"'");
+            _BALANCE =  Float.parseFloat(DB.getDisplayData());
+            cleardata();
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         return _BALANCE;
     }
 
-    /*
-    public void handleBalanceHistory(){
-        ArrayList<Integer> arrayListHis = new ArrayList<>();
-        DB.selectSQL("SELECT fldBalance FROM tblCard");
-        GetFromDB(arrayListHis);
-    }
-
-    private void GetFromDB(ArrayList<Integer> arrayList) {
-        do {
-            String data = DB.getData();
-            if (data.equals(DB.NOMOREDATA)) {
-                break;
-            } else {
-                // ADDS EACH ELEMENT TO THE ARRAY LIST
-                arrayList.add(Integer.parseInt(data));
-                System.out.print(data);
-            }
-        } while (true);
-        balanceListView.getItems().clear();
-        for (int s : arrayList) {
-            balanceListView.getItems().add(s);
-        }
-        System.out.println(balanceListView);
-    }
-
+    /**
+     * Method for clearing pending DATA
      */
     private static void cleardata() {
         do {
@@ -79,7 +62,6 @@ public class IDCard
             if (data.equals(DB.NOMOREDATA)) {
                 break;
             }
-
         } while (true);
     }
 }

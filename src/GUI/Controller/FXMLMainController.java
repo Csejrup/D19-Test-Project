@@ -15,16 +15,17 @@ import java.util.ResourceBundle;
 /**
  * FXML CONTROLLER CLASS
  * FOR MainGUI.fxml
+ * Handles Main Menu Actions
  */
 
 
 public class FXMLMainController extends AbstractController implements Initializable {
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration, ImageView-----------------------*/
+    /*----------------------------------------All FXML Button, Field,Label Declaration, ImageView-----------------------*/
 
     @FXML private ImageView image1, image2, image3, image4;
     @FXML private Button btnProducts, btnBalance, btnStatistic;
 
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration, ImageView-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration, ImageView-----------------------*/
     @FXML
     void showBalance(ActionEvent event) {
         Stage stage = (Stage) btnBalance.getScene().getWindow();

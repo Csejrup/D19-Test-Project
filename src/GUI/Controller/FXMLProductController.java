@@ -10,8 +10,12 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * Controller for ProductGUI.fxml
+ * Handles Product Actions
+ */
 public class FXMLProductController extends AbstractController {
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
 
     @FXML
     private ImageView menu, coffee1, coke1, water1, burger, apple, milk;
@@ -20,7 +24,7 @@ public class FXMLProductController extends AbstractController {
     @FXML
     private Label colaQTY, coffeeQTY, waterQTY, foodQTY, fruitsQTY, milkQTY;
     String showMilkQTY;
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
     @FXML
     void checkoutProducts(ActionEvent event) {
         System.out.println("HEJ");
@@ -46,7 +50,9 @@ public class FXMLProductController extends AbstractController {
     private String get(String productName){
         DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = '"+productName +"'");
          showMilkQTY = DB.getData();
-         int actQTY = Integer.parseInt(showMilkQTY)-1;
+
+       // int actQTY = Integer.parseInt(showMilkQTY);
+      //  int newQTY = (actQTY-1);
        // DB.updateSQL("UPDATE tblStorage SET fldQuantity ="+actQTY+"WHERE fldProductName='"+productName+"'");
 
         return showMilkQTY;

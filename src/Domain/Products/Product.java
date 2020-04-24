@@ -7,7 +7,8 @@ import java.util.Collections;
 import java.util.List;
 /**
  * This Class
- *
+ * Is the Superclass of Class Drinks and Food
+ * Represents the Products in the Canteen and their attributes
  */
 public class Product
 {
@@ -20,7 +21,19 @@ public class Product
     private String _PRODUCTTYPE;
     private String _EXPIRATIONDATE;
 
+    public Product(int _PRODUCTID, int _QUANTITY, int _MINQUANTITY, float _PRICE, String _PRODUCTNAME, String _PRODUCTTYPE, String _EXPIRATIONDATE) {
+        this._PRODUCTID = _PRODUCTID;
+        this._QUANTITY = _QUANTITY;
+        this._MINQUANTITY = _MINQUANTITY;
+        this._PRICE = _PRICE;
+        this._PRODUCTNAME = _PRODUCTNAME;
+        this._PRODUCTTYPE = _PRODUCTTYPE;
+        this._EXPIRATIONDATE = _EXPIRATIONDATE;
+    }
 
+    public Product() {
+
+    }
 
     /////////////////////////////
     ////////////GETTERS/////////
@@ -107,6 +120,9 @@ public class Product
         //IDK if we need this.
         this._EXPIRATIONDATE = _EXPIRATIONDATE;
     }
+    /**
+     * Method for clearing pending DATA
+     */
     private static void cleardata() {
         do {
             String data = DB.getData();
