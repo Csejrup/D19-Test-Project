@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
 /**
  * @Author Casper Sejrup, Filip Calaforra and (Ja)Kuba Nowak
  * EASV D19
- * Training Project (Duration 10 DAYS)
+ * Training Project (Duration 11 DAYS minus weekend = 9days)
  *
  * This Program starts up a User Friendly Interface
  * For Canteen Employees and Managers for ECCO
