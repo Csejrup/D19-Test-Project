@@ -19,13 +19,6 @@ public class Shopping_Basket
     private int _TOTAL;
     private int _TOTALQUANTITY;
 
-    public Shopping_Basket(int _CARTID, int _PRODUCTID, int _QUANTITY, int _TOTAL, int _TOTALQUANTITY) {
-        this._CARTID = _CARTID;
-        this._PRODUCTID = _PRODUCTID;
-        this._QUANTITY = _QUANTITY;
-        this._TOTAL = _TOTAL;
-        this._TOTALQUANTITY = _TOTALQUANTITY;
-    }
 
     public void addProductItem(int productID){
         _PRODUCTID = productID;
@@ -53,13 +46,13 @@ public class Shopping_Basket
         DB.selectSQL("Select fldEmployeeID FROM tblRegister where fldRegisterID = '"+RegisterID+"'");
     }
 
-    public void makePayment(int CardID,int ProductID, int _QUANTITY){
+    public void makePayment(String CardID){
         DB.selectSQL("SELECT fldBalance from tblCard WHERE fldCardID = '"+CardID+"'");
             int AccBalance = Integer.parseInt(DB.getDisplayData());
             if(AccBalance>=_TOTAL){
                 AccBalance = AccBalance-_TOTAL;
                 DB.updateSQL("UPDATE tblCard SET fldBalance = '"+AccBalance+"';");
-                updateQuantity(_QUANTITY, ProductID);
+
             }
             else {
                 Alert at = new Alert(Alert.AlertType.ERROR);
@@ -67,4 +60,6 @@ public class Shopping_Basket
                 at.show();
             }
     }
+
+
 }
