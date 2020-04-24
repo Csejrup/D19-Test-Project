@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<?import javafx.scene.control.Button?>
+<AnchorPane prefHeight="554.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLStatisticController">
+    <children>
+        <AnchorPane prefHeight="554.0" prefWidth="229.0" style="-fx-background-color: #8bc34a;">
+            <children>
+                <Label contentDisplay="CENTER" prefHeight="91.0" prefWidth="247.0" text="ECCO Canteen">
+                    <font>
+                        <Font name="Dubai Medium" size="40.0" />
+                    </font>
+                    <textFill>
+                        <RadialGradient centerX="0.5" centerY="0.5" radius="0.5">
+                            <stops>
+                                <Stop color="#c0ecff" />
+                                <Stop color="WHITE" offset="1.0" />
+                            </stops>
+                        </RadialGradient>
+                    </textFill>
+                </Label>
+                <Button fx:id="btnMainMenu" layoutX="84.0" layoutY="473.0" mnemonicParsing="false" onAction="#showMainMenu" style="-fx-background-color: #7cb342;" text="Main Menu" textFill="WHITE">
+                    <font>
+                        <Font name="Dubai Medium" size="25.0" />
+                    </font>
+                </Button>
+                <ImageView fitHeight="50.0" fitWidth="52.0" layoutX="25.0" layoutY="479.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Pictures/menu_64px.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="244.0" prefHeight="73.0" prefWidth="592.0" style="-fx-background-color: #8bc34a;">
+            <children>
+                <ImageView fitHeight="65.0" fitWidth="76.0" layoutX="527.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@Pictures/settings_32px.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="244.0" layoutY="72.0" prefHeight="482.0" prefWidth="592.0" style="-fx-background-color: #FFFFFF;">
+         <children>
+            <LineChart layoutX="-4.0" layoutY="23.0" prefHeight="457.0" prefWidth="592.0" style="-fx-background-color: transparent;" title="Sales Statistics">
+              <xAxis>
+                <CategoryAxis side="BOTTOM" />
+              </xAxis>
+              <yAxis>
+                <NumberAxis side="LEFT" />
+              </yAxis>
+            </LineChart>
+         </children></AnchorPane>
+    </children>
+</AnchorPane>

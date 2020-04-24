@@ -25,9 +25,10 @@ public class System {
             DB.selectSQL("Select fldStockID from tblStorage");
             String getStockID = DB.getData();
             int stockID = Integer.parseInt(getStockID);
-            checkBorders(stockID);
+           // checkBorders(stockID);
         }
     }
+    /*
     public void checkBorders(int ProductID){
       int minquantity = product.get_MINQUANTITY(ProductID);
       int quantity = product.get_QUANTITY(ProductID);
@@ -44,7 +45,10 @@ public class System {
       }
 
        */
-    }
+
+
+
+
     public void sendEmail(int ProductID){
         DB.selectSQL("SELECT fldSupplierID from tblStorage WHERE fldStockID =" + ProductID);
         String supplierID = DB.getData();
@@ -60,3 +64,4 @@ public class System {
     public void checkProducts(){
     }
 }
+

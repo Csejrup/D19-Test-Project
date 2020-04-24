@@ -41,7 +41,7 @@ public class FXMLMainController extends AbstractController implements Initializa
     @FXML
     void showStatistics(ActionEvent event) {
         Stage stage = (Stage) btnStatistic.getScene().getWindow();
-        loadscreen(stage, "Statistics.fxml");
+        loadscreen(stage, "StatisticGUI.fxml");
     }
 
     @FXML
