@@ -1,10 +1,8 @@
 package GUI.Controller;
 
 
-import Domain.Accounts.CanteenEmploy;
+import Domain.Accounts.Account;
 import Domain.Accounts.Manager;
-
-import Domain.SystemControll.System;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -25,22 +23,25 @@ import DataBase.DB;
 public class FXMLLoginController extends AbstractController implements Initializable
 {
     /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    @FXML
+    private TextField usernameTextfield;
 
-    @FXML private Label info1;
-    @FXML private TextField usernameTextfield;
-    @FXML private PasswordField passwordTextfield;
-    @FXML private Button loginBtn;
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    @FXML
+    private TextField passwordTextfield;
+
+    @FXML
+    private Button loginBtn;
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
+        String username = usernameTextfield.getText();
+        String password = passwordTextfield.getText();
+        Manager manager = new Manager();
+        Account ac = new Account();
+        if(ac.verifyLogin(username, password))
+        { Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+            loadscreen(mainWindow, "MainGUI.fxml"); }
 
-        //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
-        if(passwordTextfield.getText().equals(""))
-        {
-          Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
-            loadscreen(mainWindow, "MainGUI.fxml");
-        }
         else
         {
             info1.setText("Password is incorrect. Please Try Again");

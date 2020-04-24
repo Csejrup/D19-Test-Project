@@ -21,8 +21,8 @@ public class Shopping_Basket
 
     public void addProductItem(int productID){
         _PRODUCTID = productID;
-        DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldStockID = '"+productID+"'");
-        int price = Integer.parseInt(DB.getDisplayData());
+        DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        int price = Integer.parseInt(DB.getData());
         _TOTAL = _TOTAL+price;
     }
     public void updateQuantity(int quantity, int _PRODUCTID){
@@ -37,18 +37,20 @@ public class Shopping_Basket
 
     }
 
-    public void viewCartDetails(int BasketId, int _QUANTITY){
+    public void viewCartDetails(int RegisterID){
         //Template for selecting single details from basket
-        DB.selectSQL("Select //// FROM tblRegister where fldRegisterID = '"+BasketId+"'");
+        DB.selectSQL("Select fldSalesID FROM tblRegister where fldRegisterID = '"+RegisterID+"'");
+        DB.selectSQL("Select fldStockID FROM tblRegister where fldRegisterID = '"+RegisterID+"'");
+        DB.selectSQL("Select fldCustomerID FROM tblRegister where fldRegisterID = '"+RegisterID+"'");
+        DB.selectSQL("Select fldEmployeeID FROM tblRegister where fldRegisterID = '"+RegisterID+"'");
     }
 
     public void makePayment(int CardID,int ProductID, int _QUANTITY){
         DB.selectSQL("SELECT fldBalance from tblCard WHERE fldCardID = '"+CardID+"'");
             int AccBalance = Integer.parseInt(DB.getDisplayData());
-            DB.insertSQL("INSERT INTO tblCard(fldBalance) WHERE fldCardID = '"+CardID+" VALUES = '0'");
             if(AccBalance>=_TOTAL){
                 AccBalance = AccBalance-_TOTAL;
-                DB.insertSQL("INSERT INTO tblCard(fldBalance) WHERE fldCardID = '"+CardID+" VALUES = '"+AccBalance+"'");
+                DB.updateSQL("UPDATE tblCard SET fldBalance = '"+AccBalance+"';");
                 updateQuantity(_QUANTITY, ProductID);
             }
             else {
