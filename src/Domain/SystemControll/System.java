@@ -1,4 +1,5 @@
 package Domain.SystemControll;
+import DataBase.DB;
 import Domain.Products.*;
 import javafx.scene.control.Alert;
 
@@ -24,8 +25,9 @@ public class System {
         alert.show();
     }
 
-    public void checkAccount(){
-
+    public void checkAccount(int CardID){
+        DB.selectSQL("SELECT fldBalance FROM tblCard WHERE fldCardID = '"+CardID+"';");
+        String balance = DB.getData();
     }
 
     public void checkProducts(){

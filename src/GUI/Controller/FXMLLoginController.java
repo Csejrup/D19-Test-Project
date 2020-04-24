@@ -1,5 +1,7 @@
 package GUI.Controller;
 
+import Domain.Accounts.Account;
+import Domain.Accounts.Manager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,31 +25,20 @@ public class FXMLLoginController extends AbstractController implements Initializ
     private TextField usernameTextfield;
 
     @FXML
-    private PasswordField passwordTextfield;
+    private TextField passwordTextfield;
 
     @FXML
     private Button loginBtn;
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
-
-        DB.selectSQL("SELECT fldStatus FROM tblEmployee WHERE fldEmployeeID = 1");
-        do {
-            String data = DB.getData();
-            if (data.equals(DB.NOMOREDATA)) {
-                break;
-            } else {
-                // WE ADD EACH ELEMENT TO THE ARRAY LIST
-                System.out.print(data);
-            }
-        } while (true);
-        //(passwordTextfield.getText().equals("1234") && usernameTextfield.getText().equals("johnwick")
-        if(passwordTextfield.getText().equals(""))
-        {
-
-          Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
-            loadscreen(mainWindow, "MainGUI.fxml");
-        }
+        String username = usernameTextfield.getText();
+        String password = passwordTextfield.getText();
+        Manager manager = new Manager();
+        Account ac = new Account();
+        if(ac.verifyLogin(username, password))
+        { Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
+            loadscreen(mainWindow, "MainGUI.fxml"); }
         else
         {
             info1.setText("Password is incorrect. Please Try Again");

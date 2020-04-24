@@ -1,5 +1,6 @@
 package GUI.Controller;
 
+import Domain.Accounts.Account;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -14,6 +15,7 @@ import java.util.ResourceBundle;
 
 
 public class FXMLMainController extends AbstractController implements Initializable {
+    Account ac = new Account();
     @FXML
     private ImageView image1;
 
@@ -43,6 +45,7 @@ public class FXMLMainController extends AbstractController implements Initializa
     void showBalance(MouseEvent event) {
         Stage stage = (Stage) balanceLabel.getScene().getWindow();
         loadscreen(stage, "LoginGUI.fxml");
+
     }
 
     @FXML
@@ -52,7 +55,6 @@ public class FXMLMainController extends AbstractController implements Initializa
 
     @FXML
     void showFood(MouseEvent event) {
-        System.out.println("HEJ");
     }
 
     @FXML

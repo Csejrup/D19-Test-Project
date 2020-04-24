@@ -4,6 +4,7 @@ package Domain.Accounts;
 import DataBase.DB;
 import javafx.scene.control.Alert;
 
+import javax.print.DocFlavor;
 import java.sql.Statement;
 
 public class Manager extends Account
@@ -24,23 +25,18 @@ public class Manager extends Account
     public void setBorder(int border, int productID){
         DB.insertSQL("INSERT INTO tblStorage(fldMinQuantity) WHERE fldProductID = '"+productID+"' VALUES('"+border+"')");
     }
-
     public boolean login(String WorkerID, String Password){
-        DB.selectSQL("Select fldEmployeeID FROM tblEmployee WHERE fldEmployeeID = '"+WorkerID+"'");
-        String LoginID = DB.getDisplayData();
-        DB.selectSQL("Select fldPassword FROM tblEmployee WHERE fldEmployeeID = '"+WorkerID+"'");
-        String password = DB.getDisplayData();
+        DB.selectSQL("Select fldEmployeeID FROM tblEmployee WHERE fldEmployeeID = '"+WorkerID+"';");
+        String LoginID = DB.getData();
+        DB.selectSQL("Select fldPassword FROM tblEmployee WHERE fldEmployeeID = '"+WorkerID+"';");
+        String password = DB.getData();
 
-        if(LoginID.equals(WorkerID)&& password.equals(Password)){
+        if(LoginID.equals(WorkerID) && password.equals(Password)){
             return true;
         }
-        else{
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("WRONG USER NAME OR PASSWORD");
-            alert.show();
+        else {
             return false;
         }
-
 
     }
 }

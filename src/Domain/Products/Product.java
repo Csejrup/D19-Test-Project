@@ -23,18 +23,17 @@ public class Product
     ////////////GETTERS/////////
     ////////////////////////////
     public int get_PRODUCTID(int productID) {
-        DB.selectSQL("SELECT fldproductID FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        DB.selectSQL("SELECT fldStockID FROM tblStorage WHERE fldStockID = '"+productID+"'");
         _PRODUCTID = Integer.parseInt(DB.getDisplayData());
         return _PRODUCTID;
     }
-
     public int get_QUANTITY(int productID) {
-            DB.selectSQL("SELECT fldQuantity FROM tblStorage Where fldProductID = '"+productID+"'");
+            DB.selectSQL("SELECT fldQuantity FROM tblStorage Where fldStockID = '"+productID+"'");
         return _QUANTITY;
     }
 
     public int get_MINQUANTITY(int productID) {
-            DB.selectSQL("SELECT fldMinQuantity FROM tblStorage WHERE fldProductID = '"+productID+"'");
+            DB.selectSQL("SELECT fldMinQuantity FROM tblStorage WHERE fldStockID = '"+productID+"'");
             _MINQUANTITY = Integer.parseInt(DB.getDisplayData());
         return _MINQUANTITY;
     }
@@ -47,11 +46,13 @@ public class Product
 
     public String get_PRODUCTNAME(int productID) {
         DB.selectSQL("SELECT fldProductName FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        _PRODUCTNAME = DB.getData();
         return _PRODUCTNAME;
     }
 
     public String get_PRODUCTTYPE(int productID) {
         DB.selectSQL("SELECT fldProductType FROM tblStorage WHERE fldProductID = '"+productID+"'");
+        _PRODUCTTYPE = DB.getData();
         return _PRODUCTTYPE;
     }
 
