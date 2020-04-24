@@ -19,9 +19,9 @@ public class CanteenEmploy extends Account {
 
     public boolean login(String username, String password){
         DB.selectSQL("SELECT fldEmployeeID from tblEmployee WHERE fldEmployeeID = '"+username+"'");
-        String _Name = DB.getDisplayData();
+        String _Name = DB.getData();
         DB.selectSQL("SELECT fldPassword FROM tblEmployee WHERE fldEmployeeID = '"+username+"'");
-        String _Password = DB.getDisplayData();
+        String _Password = DB.getData();
         if(username.equals(_Name)&&password.equals(_Password)){
             return true;
         }

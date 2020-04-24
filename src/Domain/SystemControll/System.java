@@ -60,7 +60,11 @@ public class System {
         alert.setContentText("Email with order has been send to: "+email);
         alert.show();
     }
-    public void checkAccount(){
+
+    public void checkAccount(int CardID){
+        DB.selectSQL("SELECT fldBalance FROM tblCard WHERE fldCardID = '"+CardID+"';");
+        String balance = DB.getData();
+
     }
     public void checkProducts(){
     }
