@@ -6,7 +6,10 @@ import javafx.scene.control.Alert;
 
 import javax.print.DocFlavor;
 import java.sql.Statement;
-
+/**
+ * This Class
+ *
+ */
 public class Manager extends Account
 {
     private String _NAME;
@@ -15,13 +18,9 @@ public class Manager extends Account
     public String get_SURNAME() {
         return _SURNAME;
     }
-
     public void set_SURNAME(String _SURNAME) {
         this._SURNAME = _SURNAME;
     }
-
-
-
     public void setBorder(int border, int productID){
         DB.insertSQL("INSERT INTO tblStorage(fldMinQuantity) WHERE fldProductID = '"+productID+"' VALUES('"+border+"')");
     }
@@ -37,6 +36,7 @@ public class Manager extends Account
         else {
             return false;
         }
+
 
     }
 }

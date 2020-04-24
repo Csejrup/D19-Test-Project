@@ -1,26 +1,28 @@
 package GUI.Controller;
 
+
 import Domain.Accounts.Account;
 import Domain.Accounts.Manager;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import DataBase.DB;
+
+/**
+ * FXML CONTROLLER CLASS
+ * FOR LoginGUI.FXML
+ *
+ */
 public class FXMLLoginController extends AbstractController implements Initializable
 {
-    @FXML
-    private Label info1;
-
+    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
     @FXML
     private TextField usernameTextfield;
 
@@ -39,6 +41,7 @@ public class FXMLLoginController extends AbstractController implements Initializ
         if(ac.verifyLogin(username, password))
         { Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
             loadscreen(mainWindow, "MainGUI.fxml"); }
+
         else
         {
             info1.setText("Password is incorrect. Please Try Again");

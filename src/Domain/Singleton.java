@@ -1,5 +1,8 @@
 package Domain;
-
+/**
+ * This Class
+ *
+ */
 public final class Singleton {
     private static volatile Singleton instance;
 

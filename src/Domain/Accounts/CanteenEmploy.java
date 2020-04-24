@@ -1,7 +1,10 @@
 package Domain.Accounts;
 
 import DataBase.DB;
-
+/**
+ * This Class
+ *
+ */
 public class CanteenEmploy extends Account {
     private String _NAME;
     private String _Password;

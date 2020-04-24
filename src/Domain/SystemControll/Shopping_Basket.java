@@ -7,7 +7,10 @@ import java.security.AllPermission;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.Collections;
-
+/**
+ * This Class
+ *
+ */
 public class Shopping_Basket
 {
     private int _CARTID;
@@ -26,11 +29,11 @@ public class Shopping_Basket
         /*
         //////////////////////TEST///////////////////
          */
-        DB.selectSQL("SELECT fldQuantity FROM tblStorage WHERE fldProductID ='"+_PRODUCTID+"'");
+        DB.selectSQL("SELECT fldQuantity FROM tblStorage WHERE fldStockID ='"+_PRODUCTID+"'");
         _QUANTITY = Integer.parseInt(DB.getDisplayData());
-        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldProductID = '"+_PRODUCTID+"' VALUES(0)");
+        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldStockID = '"+_PRODUCTID+"' VALUES(0)");
         _QUANTITY = _QUANTITY - quantity;
-        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldProductID = '"+_PRODUCTID+"' VALUES("+_QUANTITY+")");
+        DB.insertSQL("INSERT INTO tblStorage(fldQuantity) WHERE fldStockID = '"+_PRODUCTID+"' VALUES("+_QUANTITY+")");
 
     }
 

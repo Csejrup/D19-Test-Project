@@ -2,22 +2,30 @@ package Domain.Accounts;
 
 import DataBase.DB;
 
-
-public class EccoEmploy extends Account
+/**
+ * This Class
+ *
+ */
+public class EccoEmploy
 {
+    public void set_EMAIL(String _EMAIL) {
+        this._EMAIL = _EMAIL;
+    }
+
     private int _EMPLOYEEID;
     private int _EMPLOYEENAME;
     private String _EMAIL;
 
-    public void addBalance(float balance, int CustomerID){
-        DB.insertSQL("INSERT INTO tblCard WHERE fldCustomerId = "+ CustomerID+" VALUES('"+balance+"')");
 
-    }
+    public int get_EMPLOYEEID() { return _EMPLOYEEID; }
 
-    public void UpdateBalance(int balance){
-        DB.insertSQL("INSERT INTO tblCardID(fldBalance) VALUES = '"+balance+"'");
-    }
+    public void set_EMPLOYEEID(int _EMPLOYEEID) { this._EMPLOYEEID = _EMPLOYEEID; }
 
+    public int get_EMPLOYEENAME() { return _EMPLOYEENAME; }
+
+    public void set_EMPLOYEENAME(int _EMPLOYEENAME) { this._EMPLOYEENAME = _EMPLOYEENAME; }
+
+    public String get_EMAIL() { return _EMAIL; }
 
 
 

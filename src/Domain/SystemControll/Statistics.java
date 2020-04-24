@@ -1,5 +1,8 @@
 package Domain.SystemControll;
-
+/**
+ * This Class
+ *
+ */
 public class Statistics
 {
 

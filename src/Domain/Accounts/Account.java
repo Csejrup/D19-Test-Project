@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 
 import java.util.EventObject;
 
+
 public class Account {
     private String _USERNAME;
     private String _PASSWORD;
