@@ -29,12 +29,9 @@ public class Account {
         CanteenEmploy CE = new CanteenEmploy();
         if(manager.login(_USERNAME,_PASSWORD)){
             _LOGINSTATUS = true;
-        }
-
-        else{
+        }else{
             _LOGINSTATUS = false;
         }
         return _LOGINSTATUS;
     }
-
 }
