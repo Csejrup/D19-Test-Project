@@ -1,10 +1,14 @@
 package GUI.Controller;
 
 import DataBase.DB;
+import Domain.Products.Product;
+import Domain.SystemControll.Shopping_Basket;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -14,16 +18,44 @@ import javafx.stage.Stage;
  * Handles Product Actions
  */
 public class FXMLProductController extends AbstractController {
+  //Objects
+    Product product = new Product();
+    Shopping_Basket sh = new Shopping_Basket();
     /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
 
-    @FXML private ImageView menu, coffee1, coke1, water1, burger, apple, milk;
-
+    @FXML private ImageView menu, coffee1, coke1, water1, burger, apple, milk
+   
+    @FXML private Label colaQTY, coffeeQTY, waterQTY, foodQTY, fruitsQTY, milkQTY,fldTotalPrice;
+          
+    @FXML private TextField fldCardID;
+       
     @FXML private Button btnCheckOut, btnMainMenu;
 
-    @FXML private Label colaQTY, coffeeQTY, waterQTY, foodQTY, fruitsQTY, milkQTY;
-
     /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
-    String showMilkQTY;
+    String showMilkQTY; 
+    float total;
+    @FXML
+    void Checkout(ActionEvent event){
+        btnCheckOut.setOnMouseClicked(e->{
+           String CardID = fldCardID.getText();
+            DB.selectSQL("SELECT fldBalance FROM tblCard WHERE fldCardID = '"+CardID+"'");
+            float AccBalance = Float.parseFloat(DB.getData());
+            cleardata();
+            if(AccBalance>=total){
+                    AccBalance = AccBalance-total;
+                System.out.println(AccBalance);
+                DB.insertSQL("UPDATE tblCard set fldBalance = '"+AccBalance+"' WHERE fldCardID = '"+CardID+"'");
+                total = 0;
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setContentText("TRANSACTION COMPLETED");
+                alert.show();
+            }
+            else {
+                Alert at = new Alert(Alert.AlertType.ERROR);
+                at.setContentText("TRANSACION DECLINED: NOT ENOUGHT MONEY");
+                at.show();
+            } });
+    }
     @FXML
     void checkoutProducts(ActionEvent event) {
         System.out.println("HEJ");
@@ -36,7 +68,52 @@ public class FXMLProductController extends AbstractController {
     }
 
     @FXML
-    void addItem(MouseEvent event) {
+    void addCoffeToBasket(MouseEvent event) {
+            coffee1.setOnMouseClicked(e->{
+              float coffePrice =   product.get_PRICE(27);
+              total = total+coffePrice;
+              fldTotalPrice.setText(String.valueOf(total));
+            });
+    }
+    @FXML
+    void addBurgerToBasket(MouseEvent event){
+        burger.setOnMouseClicked(e->{
+            float burgerPrice = product.get_PRICE(25);
+            total = total+burgerPrice;
+            fldTotalPrice.setText(String.valueOf(total));
+        });
+    }
+    @FXML
+    void addWaterToBasket(MouseEvent event){
+        water1.setOnMouseClicked(e->{
+            float waterPrice = product.get_PRICE(28);
+            total = total+waterPrice;
+            fldTotalPrice.setText(String.valueOf(total));
+        });
+    }
+    @FXML
+    void addApple(){
+        apple.setOnMouseClicked(e->{
+            float applePrice = product.get_PRICE(29);
+            total = total+applePrice;
+            fldTotalPrice.setText(String.valueOf(total));
+        });
+    }
+    @FXML
+    void addCocaCola(){
+        coke1.setOnMouseClicked(e->{
+            float cokeprice = product.get_PRICE(7);
+            total = total+cokeprice;
+            fldTotalPrice.setText(String.valueOf(total));
+        });
+    }
+    @FXML
+    void addMilk(){
+        milk.setOnMouseClicked(e->{
+            float milkPrice = product.get_PRICE(8);
+            total = total+milkPrice;
+            fldTotalPrice.setText(String.valueOf(total));
+        });
     }
 
     @FXML
@@ -114,6 +191,7 @@ public class FXMLProductController extends AbstractController {
             }
         } while (true);
     }
+
 }
 
 

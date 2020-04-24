@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -8,6 +14,7 @@
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
+
 
 <AnchorPane onMouseEntered="#putLabelstog" prefHeight="554.0" prefWidth="827.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller.FXMLProductController">
     <children>
@@ -26,17 +33,17 @@
                         </RadialGradient>
                     </textFill>
                 </Label>
-                <ImageView fx:id="cart" fitHeight="39.0" fitWidth="52.0" layoutX="29.0" layoutY="115.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="cart" fitHeight="39.0" fitWidth="52.0" layoutX="29.0" layoutY="115.0"  pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@Pictures/checkout_26px.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="menu" fitHeight="59.0" fitWidth="51.0" layoutX="23.0" layoutY="475.0" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+                <ImageView fx:id="menu" fitHeight="59.0" fitWidth="51.0" layoutX="23.0" layoutY="475.0"  pickOnBounds="true" preserveRatio="true">
                     <image>
                         <Image url="@Pictures/menu_64px.png" />
                     </image>
                 </ImageView>
-            <Button fx:id="btnCheckOut" layoutX="97.0" layoutY="104.0" mnemonicParsing="false" onAction="#checkoutProducts" style="-fx-background-color: #7cb342;" text="Check Out" textFill="WHITE">
+            <Button fx:id="btnCheckOut" layoutX="97.0" layoutY="104.0" mnemonicParsing="false" onAction="#Checkout" style="-fx-background-color: #7cb342;" text="Check Out" textFill="WHITE">
                <font>
                   <Font name="Dubai Medium" size="25.0" />
                </font>
@@ -46,6 +53,7 @@
                   <Font name="Dubai Medium" size="25.0" />
                </font>
             </Button>
+            <TextField fx:id="fldCardID" layoutX="68.0" layoutY="73.0" promptText="INSERT CARD ID" />
             </children>
         </AnchorPane>
         <AnchorPane layoutX="277.0" prefHeight="59.0" prefWidth="558.0" style="-fx-background-color: #8bc34a;">
@@ -59,32 +67,32 @@
         </AnchorPane>
         <AnchorPane layoutX="277.0" layoutY="59.0" prefHeight="495.0" prefWidth="558.0" style="-fx-background-color: #FFFFFF;">
          <children>
-             <ImageView fx:id="coffee1" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="30.0" onMouseClicked="#CoffeeEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+             <ImageView fx:id="coffee1" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="30.0" onMouseClicked="#CoffeeEvent" onMousePressed="#addCoffeToBasket" pickOnBounds="true" preserveRatio="true">
                  <image>
                      <Image url="@Pictures/coffe.png" />
                  </image>
              </ImageView>
-             <ImageView fx:id="coke1" fitHeight="105.0" fitWidth="141.0" layoutX="213.0" layoutY="30.0" onMouseClicked="#ColaEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+             <ImageView fx:id="coke1" fitHeight="105.0" fitWidth="141.0" layoutX="213.0" layoutY="30.0" onMouseClicked="#ColaEvent" onMousePressed="#addCocaCola" pickOnBounds="true" preserveRatio="true">
                  <image>
                      <Image url="@Pictures/coke.png" />
                  </image>
              </ImageView>
-             <ImageView fx:id="water1" fitHeight="105.0" fitWidth="146.0" layoutX="408.0" layoutY="30.0" onMouseClicked="#WatterEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+             <ImageView fx:id="water1" fitHeight="105.0" fitWidth="146.0" layoutX="408.0" layoutY="30.0" onMouseClicked="#WatterEvent" onMousePressed="#addWaterToBasket" pickOnBounds="true" preserveRatio="true">
                  <image>
                      <Image url="@Pictures/water.png" />
                  </image>
              </ImageView>
-            <ImageView fx:id="burger" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="205.0" onMouseClicked="#FoodEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="burger" fitHeight="105.0" fitWidth="155.0" layoutX="14.0" layoutY="205.0" onMouseClicked="#FoodEvent" onMousePressed="#addBurgerToBasket" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/food.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="apple" fitHeight="105.0" fitWidth="155.0" layoutX="213.0" layoutY="205.0" onMouseClicked="#FruitEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="apple" fitHeight="105.0" fitWidth="155.0" layoutX="213.0" layoutY="205.0" onMouseClicked="#FruitEvent" onMousePressed="#addApple" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/fruit.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="milk" fitHeight="105.0" fitWidth="155.0" layoutX="408.0" layoutY="205.0" onMouseClicked="#MilkEvent" onMousePressed="#addItem" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="milk" fitHeight="105.0" fitWidth="155.0" layoutX="408.0" layoutY="205.0" onMouseClicked="#MilkEvent" onMousePressed="#addMilk" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/milk.png" />
                </image>
@@ -106,14 +114,15 @@
                   <Font name="Dubai Medium" size="12.0" />
                </font></Label>
             <Label fx:id="fruitsQTY" layoutX="252.0" layoutY="339.0" />
-            <Label fx:id="waterQTY" layoutX="447.0" layoutY="170.0">
-               <font>
+            <Label fx:id="waterQTY" layoutX="447.0" layoutY="170.0" <font>
                   <Font name="Dubai Medium" size="12.0" />
                </font></Label>
-            <Label fx:id="milkQTY" layoutX="447.0" layoutY="331.0">
-               <font>
+            <Label fx:id="milkQTY" layoutX="447.0" layoutY="331.0" <font>
                   <Font name="Dubai Medium" size="12.0" />
                </font></Label>
+            <Label layoutX="435.0" layoutY="405.0" prefHeight="17.0" prefWidth="51.0" text="BASKET" />
+            <Label layoutX="385.0" layoutY="435.0" text="Total:" />
+            <Label fx:id="fldTotalPrice" layoutX="431.0" layoutY="435.0" prefHeight="17.0" prefWidth="105.0" />
          </children></AnchorPane>
     </children>
 </AnchorPane>
