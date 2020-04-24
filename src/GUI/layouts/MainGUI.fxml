@@ -35,12 +35,12 @@
                   <Image url="@Pictures/add_shopping_cart_80px.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="image4" fitHeight="46.0" fitWidth="46.0" layoutX="26.0" layoutY="486.0" onMousePressed="#showStatistics" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image4" fitHeight="46.0" fitWidth="46.0" layoutX="26.0" layoutY="486.0"  pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/statistics_80px.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="image3" fitHeight="46.0" fitWidth="46.0" layoutX="26.0" layoutY="395.0" onMousePressed="#showBalance" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="image3" fitHeight="46.0" fitWidth="46.0" layoutX="26.0" layoutY="395.0"  pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Pictures/payment_history_24px.png" />
                </image>

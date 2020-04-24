@@ -12,9 +12,6 @@ public class Account {
     private String _USERNAME;
     private String _PASSWORD;
     private boolean _LOGINSTATUS;
-  
-    Manager manager = new Manager();
-    CanteenEmploy CE = new CanteenEmploy();
 
     public Account(String _USERNAME, String _PASSWORD, boolean _LOGINSTATUS) {
         this._USERNAME = _USERNAME;

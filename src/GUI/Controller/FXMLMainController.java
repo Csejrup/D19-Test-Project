@@ -22,22 +22,18 @@ import java.util.ResourceBundle;
  */
 
 
-public class FXMLMainController extends AbstractController implements Initializable {
+public class FXMLMainController extends AbstractController {
 
     /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration, ImageView-----------------------*/
-
-
-
     @FXML private ImageView image1, image2, image3, image4;
     @FXML private Button btnProducts, btnBalance, btnStatistic;
 
     /*----------------------------------------All FXML Button, Field, Label Declaration, ImageView-----------------------*/
-    Account ac = new Account();
 
     @FXML
-    void showBalance(MouseEvent event) {
-        Stage stage = (Stage) balanceLabel.getScene().getWindow();
-        loadscreen(stage, "LoginGUI.fxml");
+    void showBalance(ActionEvent event) {
+        Stage stage = (Stage) btnBalance.getScene().getWindow();
+        loadscreen(stage, "BalanceGUI.fxml");
     }
     @FXML
     void showProducts(ActionEvent event) {
@@ -46,18 +42,13 @@ public class FXMLMainController extends AbstractController implements Initializa
         loadscreen(stage, "ProductGUI.fxml");
     }
     @FXML
-    void showFood(MouseEvent event) {
-
     void showStatistics(ActionEvent event) {
         Stage stage = (Stage) btnStatistic.getScene().getWindow();
         loadscreen(stage, "StatisticGUI.fxml");
     }
-
     @FXML
     void showSettings(MouseEvent event) {
         System.out.println("HEJ");
     }
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    }
+
 }
