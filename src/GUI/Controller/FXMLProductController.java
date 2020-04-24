@@ -46,8 +46,7 @@ public class FXMLProductController extends AbstractController {
     private String get(String productName){
         DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = '"+productName +"'");
          showMilkQTY = DB.getData();
-        //milkQTY.setText(showMilkQTY);
-        int actQTY = Integer.parseInt(showMilkQTY)-1;
+         int actQTY = Integer.parseInt(showMilkQTY)-1;
        // DB.updateSQL("UPDATE tblStorage SET fldQuantity ="+actQTY+"WHERE fldProductName='"+productName+"'");
 
         return showMilkQTY;
