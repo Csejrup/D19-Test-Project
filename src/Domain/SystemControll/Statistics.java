@@ -1,7 +1,8 @@
 package Domain.SystemControll;
+
 /**
  * This Class
- *
+ *  Represents Statistics
  */
 public class Statistics
 {
@@ -12,5 +13,7 @@ public class Statistics
     public void createStatistics(){
 
     }
+
+
 
 }

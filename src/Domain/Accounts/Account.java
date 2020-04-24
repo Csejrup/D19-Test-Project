@@ -1,18 +1,30 @@
 package Domain.Accounts;
 
 import DataBase.DB;
-import javafx.scene.Node;
-import javafx.stage.Stage;
 
-import java.util.EventObject;
-
+/**
+ * This Class represents
+ * The superclass for CanteenEmploy and EccoEmploy
+ *
+ */
 
 public class Account {
     private String _USERNAME;
     private String _PASSWORD;
     private boolean _LOGINSTATUS;
+  
+    Manager manager = new Manager();
+    CanteenEmploy CE = new CanteenEmploy();
 
+    public Account(String _USERNAME, String _PASSWORD, boolean _LOGINSTATUS) {
+        this._USERNAME = _USERNAME;
+        this._PASSWORD = _PASSWORD;
+        this._LOGINSTATUS = _LOGINSTATUS;
+    }
+    
+    public Account() {
 
+    }
     public boolean verifyLogin(String employeeID, String password ){
         _USERNAME = employeeID;
         _PASSWORD = password;

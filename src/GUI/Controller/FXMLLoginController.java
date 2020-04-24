@@ -18,19 +18,18 @@ import DataBase.DB;
 /**
  * FXML CONTROLLER CLASS
  * FOR LoginGUI.FXML
- *
+ * Handles Login Actions
  */
-public class FXMLLoginController extends AbstractController implements Initializable
+public class FXMLLoginController extends AbstractController
 {
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
-    @FXML
-    private TextField usernameTextfield;
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
 
-    @FXML
-    private TextField passwordTextfield;
-
-    @FXML
-    private Button loginBtn;
+    @FXML private Label info1;
+    @FXML private TextField usernameTextfield, passwordTextfield;
+    @FXML private PasswordField passwordTextfield;
+    @FXML private Button loginBtn;
+   
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
     @FXML
     void handleLogin(ActionEvent event) throws IOException
     {
@@ -41,15 +40,9 @@ public class FXMLLoginController extends AbstractController implements Initializ
         if(ac.verifyLogin(username, password))
         { Stage mainWindow = (Stage)((Node)event.getSource()).getScene().getWindow();
             loadscreen(mainWindow, "MainGUI.fxml"); }
-
         else
         {
             info1.setText("Password is incorrect. Please Try Again");
         }
-    }
-///////////////
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
     }
 }

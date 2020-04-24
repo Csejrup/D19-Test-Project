@@ -11,8 +11,12 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * Controller for ProductGUI.fxml
+ * Handles Product Actions
+ */
 public class FXMLProductController extends AbstractController {
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
 
     @FXML
     private ImageView menu, coffee1, coke1, water1, burger, apple, milk;
@@ -22,7 +26,8 @@ public class FXMLProductController extends AbstractController {
     private Label colaQTY, coffeeQTY, waterQTY, foodQTY, fruitsQTY, milkQTY;
     String showMilkQTY;
 
-    /*----------------------------------------All FXML Button, Field, RadioButton,Label Declaration-----------------------*/
+    /*----------------------------------------All FXML Button, Field, Label Declaration-----------------------*/
+
     @FXML
     void checkoutProducts(ActionEvent event) {
         System.out.println("HEJ");
@@ -34,23 +39,22 @@ public class FXMLProductController extends AbstractController {
         Stage stage = (Stage) btnMainMenu.getScene().getWindow();
         loadscreen(stage, "MainGUI.fxml");
     }
-
     @FXML
     void addItem(MouseEvent event) {
-
     }
-
     @FXML
     void showSettings(MouseEvent event) {
 
     }
+    private String get(String productName){
+        DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = '"+productName +"'");
+         showMilkQTY = DB.getData();
 
-
-
+       // int actQTY = Integer.parseInt(showMilkQTY);
+      //  int newQTY = (actQTY-1);
+       // DB.updateSQL("UPDATE tblStorage SET fldQuantity ="+actQTY+"WHERE fldProductName='"+productName+"'");
     private String get(String productName) {
         try {
-
-
         DB.selectSQL("SELECT fldQuantity From tblStorage where fldProductName = '" + productName + "'");
         showMilkQTY = DB.getData();
         int actQTY = Integer.parseInt(showMilkQTY) - 1;
@@ -103,20 +107,6 @@ public class FXMLProductController extends AbstractController {
         get("Coffee");
         coffeeQTY.setText(showMilkQTY);
     }
-
-
-
-    private static void cleardata() {
-        do {
-            String data = DB.getData();
-            if (data.equals(DB.NOMOREDATA)) {
-                break;
-            }
-
-        } while (true);
-    }
-
-
     public void putLabelstog(MouseEvent event) {
         firsShowUP("Milk");
         milkQTY.setText(showMilkQTY);
@@ -130,6 +120,14 @@ public class FXMLProductController extends AbstractController {
         fruitsQTY.setText(showMilkQTY);
         firsShowUP("Burgers");
         foodQTY.setText(showMilkQTY);
+    }
+      private static void cleardata() {
+        do {
+            String data = DB.getData();
+            if (data.equals(DB.NOMOREDATA)) {
+                break;
+            }
+        } while (true);
     }
 }
 

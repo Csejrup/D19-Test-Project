@@ -4,10 +4,14 @@ import DataBase.DB;
 
 /**
  * This Class
- *
+ * Is a subclass of Class Account
  */
-public class EccoEmploy
+public class EccoEmploy extends Account
 {
+    public EccoEmploy(String _USERNAME, String _PASSWORD, boolean _LOGINSTATUS) {
+        super(_USERNAME, _PASSWORD, _LOGINSTATUS);
+    }
+
     public void set_EMAIL(String _EMAIL) {
         this._EMAIL = _EMAIL;
     }

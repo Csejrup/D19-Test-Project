@@ -8,13 +8,25 @@ import javax.print.DocFlavor;
 import java.sql.Statement;
 /**
  * This Class
- *
+ * is a subclass of class Acount
+ * Represents the Manager and its attributes
  */
 public class Manager extends Account
 {
+
+
     private String _NAME;
     private String _SURNAME;
     private String _EMAIL;
+
+    public Manager(String _USERNAME, String _PASSWORD, boolean _LOGINSTATUS) {
+        super(_USERNAME, _PASSWORD, _LOGINSTATUS);
+    }
+
+    public Manager() {
+        super();
+    }
+
     public String get_SURNAME() {
         return _SURNAME;
     }

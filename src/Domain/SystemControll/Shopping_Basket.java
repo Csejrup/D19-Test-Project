@@ -19,6 +19,14 @@ public class Shopping_Basket
     private int _TOTAL;
     private int _TOTALQUANTITY;
 
+    public Shopping_Basket(int _CARTID, int _PRODUCTID, int _QUANTITY, int _TOTAL, int _TOTALQUANTITY) {
+        this._CARTID = _CARTID;
+        this._PRODUCTID = _PRODUCTID;
+        this._QUANTITY = _QUANTITY;
+        this._TOTAL = _TOTAL;
+        this._TOTALQUANTITY = _TOTALQUANTITY;
+    }
+
     public void addProductItem(int productID){
         _PRODUCTID = productID;
         DB.selectSQL("SELECT fldPrice FROM tblStorage WHERE fldProductID = '"+productID+"'");
@@ -59,5 +67,4 @@ public class Shopping_Basket
                 at.show();
             }
     }
-
 }

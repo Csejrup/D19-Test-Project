@@ -11,12 +11,19 @@ import javafx.stage.Stage;
 import java.net.URL;
 import java.util.ResourceBundle;
 /**
- * This Class
+ * @Author Casper Sejrup, Filip Calaforra and (Ja)Kuba Nowak
+ * EASV D19
+ * Training Project (Duration 10 DAYS)
  *
+ * This Program starts up a User Friendly Interface
+ * For Canteen Employees and Managers for ECCO
+ * You can Buy Products in the Canteen through ID Card
+ * You can look up statistics of how many products are sold for each day
+ * You can look up how many 'In stock' there is of a specific Product
+ *
+ * GUI Made IN JAVAFX - SOFTWARE USED, INTELLIJ AND SCENEBUILDER
  */
-public class Canteen extends Application implements Initializable {
-
-
+public class Canteen extends Application {
     public static void main(String[] args) { launch(args); }
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -32,10 +39,4 @@ public class Canteen extends Application implements Initializable {
             e.printStackTrace();
         }
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-    }
-
 }
